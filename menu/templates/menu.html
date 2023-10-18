@@ -1,0 +1,16 @@
+{% load get_menu %}
+{% for main_menu_item in main_menu_items %}
+    <a class="navbar-brand" href="{{ main_menu_item.url }}">{{ main_menu_item.name }}</a>
+    {% if main_menu_item.children %}
+    <details {% if main_menu_item.id in open_menu_item_ids %} open {% endif %}>
+        <summary>
+
+        </summary>
+        {% for child in main_menu_item.children %}
+        <div class="menu_item">
+            {% get_menu_item_children child.id %}
+        </div>
+        {% endfor %}
+    </details>
+    {% endif %}
+{% endfor %}

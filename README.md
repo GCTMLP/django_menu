@@ -20,6 +20,7 @@ cd django_menu
 ```commandline
 docker-compose  up -d --build
 ```
+4. Enjoy on http://127.0.0.1:8000/
 
 ###  Via runserver
 
@@ -34,22 +35,22 @@ cd django_menu
 3. Create venv and activate
 ```commandline
  python3 -m venv my_venv
+ source my_venv/bin/activate
 ```
 4. Install packages
 ```commandline
 pip3 install -r requirements.txt 
 ```
-5. Make migrations and collect staticfiles
+5. Make migrations
 ```commandline
-python3 manage.py makemigration
+python3 manage.py makemigrations
 python3 manage.py migrate
-python3 manage.py collectstatic
-python3 manage.py createsuperuser
 ```
 6. Runserver
 ```commandline
 python3 manage.py runserver
 ```
+7. Enjoy on http://127.0.0.1:8000/
 
 
 
